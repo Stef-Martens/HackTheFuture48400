@@ -1,6 +1,40 @@
-<p>home works!</p>
-<div class="container-fluid">
-        <div class="form-group">
-            <button style="background-color: #326da8; border-color: #326da8;" class="btn btn-success btn-lg btn-block" class="btn btn-success btn-lg btn-block" type="submit" (click)="logout()">Afmelden</button>
+<!--LINKS-->
+<div id="col-1">
+    <h2>Datacenters</h2>
+    <ul class="datacenters">
+        <li *ngFor="let datacenter of datacenters" [class.selected]="datacenter === selectedDatacenter"
+            (click)="onSelect(datacenter)">
+            <span class="badge">{{datacenter.id}}</span> {{datacenter.name}}
+        </li>
+    </ul>
+</div>
+
+
+
+<!--MIDDEN-->
+<div id="col-2">
+    <div *ngIf="selectedDatacenter">
+        <h2>{{selectedDatacenter.name | uppercase}} Details</h2>
+        <div>
+            <ul>
+                <li *ngFor="let error of errors">
+                    <p>
+                        {{ error.errorTypeLabel }}
+                    </p>
+                </li>
+            </ul>
         </div>
+    </div>
+</div>
+
+<!--RECHTS-->
+<div id="col-3">
+    <h2>Search for data</h2>
+    <button (click)="getMostErrorsDatacenters()" id="knop">DELETE DATACENTER WITH MOST ERRORS</button>
+</div>
+
+<div class="container-fluid">
+    <div class="form-group">
+        <button style="background-color: #184eac; border-color: #184eac;" class="btn btn-success btn-lg btn-block" type="submit" (click)="logout()">Afmelden</button>
+    </div>
 </div>

@@ -1,9 +1,9 @@
-<div class="container-fluid" >
+<div class="container-fluid" *ngIf='!isSignedIn'>
     <br>
     <br>
     <div class="row" style="text-align: -webkit-center">
         <div class="col-md-12">
-            <div class="card" style="width:20rem; margin:24px 0 24px 0; text-align: -webkit-center;" *ngIf='!isSignedIn'>
+            <div class="card" style="width:20rem; margin:24px 0 24px 0; text-align: -webkit-center;" >
                 <h2>
                     <p>Register</p>
                 </h2>
@@ -22,7 +22,7 @@
                             <div class="intput-group-text bg-white">
                             </div>
                         </div>
-                        <input name="passwordReg" #passwordRegister class="form-control" placeholder="password" required
+                        <input name="passwordReg" #passwordRegister class="form-control" placeholder="password" required type="password"
                             maxlength="20" minlength="6" style="border-radius: 3%;">
                     </div>
                 </div>
@@ -34,7 +34,7 @@
     <br>
     <div class="row" style="text-align: -webkit-center">
         <div class="col-md-12">
-            <div class="card" style="width:20rem; margin:24px 0 24px 0; text-align: -webkit-center;" *ngIf='!isSignedIn'>
+            <div class="card" style="width:20rem; margin:24px 0 24px 0; text-align: -webkit-center;">
                 <h2>
                     <p>Log in</p>
                 </h2>
@@ -53,7 +53,7 @@
                             <div class="intput-group-text bg-white">
                             </div>
                         </div>
-                        <input name="passwordLog" #passwordLogin class="form-control" placeholder="password" required maxlength="20" minlength="6" style="border-radius: 3%;">
+                        <input name="passwordLog" #passwordLogin class="form-control" placeholder="password" required maxlength="20" minlength="6" type="password" style="border-radius: 3%;">
                     </div>
                 </div>
                 <button class="btn btn-primary"
