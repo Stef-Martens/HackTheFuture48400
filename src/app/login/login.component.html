@@ -1,1 +1,16 @@
-<p>login works!</p>
+<div *ngIf='!isSignedIn'>
+    <h2>Register</h2>
+    <input type="email" #emailRegister required placeholder="email"/> 
+    <input type="password" #passwordRegister required placeholder="password"/>
+    <button (click)="onRegister(emailRegister.value, passwordRegister.value)">{{btnRegister}}</button>
+</div>
+<br>
+
+<div *ngIf='!isSignedIn'>
+    <h2>Login</h2>
+    <input type="email" #emailLogin required placeholder="email" />
+    <input type="password" #passwordLogin required placeholder="password"/>
+    <button (click)="onLogin(emailLogin.value, passwordLogin.value)">{{btnLogin}}</button>
+</div>
+<br>
+<app-home *ngIf='isSignedIn' (isLogout)="onlogout()"></app-home>
