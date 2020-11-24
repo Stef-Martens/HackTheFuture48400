@@ -1,16 +1,65 @@
-<div *ngIf='!isSignedIn'>
-    <h2>Register</h2>
-    <input type="email" #emailRegister required placeholder="email"/> 
-    <input type="password" #passwordRegister required placeholder="password"/>
-    <button (click)="onRegister(emailRegister.value, passwordRegister.value)">{{btnRegister}}</button>
+<div class="container-fluid" >
+    <br>
+    <br>
+    <div class="row" style="text-align: -webkit-center">
+        <div class="col-md-12">
+            <div class="card" style="width:20rem; margin:24px 0 24px 0; text-align: -webkit-center;" *ngIf='!isSignedIn'>
+                <h2>
+                    <p>Register</p>
+                </h2>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="intput-group-text bg-white">
+                            </div>
+                        </div>
+                        <input name="emailLog" #emailRegister class="form-control" placeholder="email" required maxlength="30"  minlength="7" style="border-radius: 3%;">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="intput-group-text bg-white">
+                            </div>
+                        </div>
+                        <input name="passwordReg" #passwordRegister class="form-control" placeholder="password" required
+                            maxlength="20" minlength="6" style="border-radius: 3%;">
+                    </div>
+                </div>
+                <button class="btn btn-primary" style="background-color: #184eac; border-color: #184eac; margin-top: 15px;" (click)="onRegister(emailRegister.value, passwordRegister.value)"><b>{{btnRegister}}</b></button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row" style="text-align: -webkit-center">
+        <div class="col-md-12">
+            <div class="card" style="width:20rem; margin:24px 0 24px 0; text-align: -webkit-center;" *ngIf='!isSignedIn'>
+                <h2>
+                    <p>Log in</p>
+                </h2>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="intput-group-text bg-white">
+                            </div>
+                        </div>
+                        <input name="emailLog" #emailLogin class="form-control" placeholder="email" required maxlength="30" minlength="7" style="border-radius: 3%;">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="intput-group-text bg-white">
+                            </div>
+                        </div>
+                        <input name="passwordLog" #passwordLogin class="form-control" placeholder="password" required maxlength="20" minlength="6" style="border-radius: 3%;">
+                    </div>
+                </div>
+                <button class="btn btn-primary"
+                    style="background-color: #184eac; border-color: #184eac; margin-top: 15px;" (click)="onLogin(emailLogin.value, passwordLogin.value)"><b>{{btnLogin}}</b></button>
+            </div>
+        </div>
+    </div>
 </div>
-<br>
-
-<div *ngIf='!isSignedIn'>
-    <h2>Login</h2>
-    <input type="email" #emailLogin required placeholder="email" />
-    <input type="password" #passwordLogin required placeholder="password"/>
-    <button (click)="onLogin(emailLogin.value, passwordLogin.value)">{{btnLogin}}</button>
-</div>
-<br>
 <app-home *ngIf='isSignedIn' (isLogout)="onlogout()"></app-home>

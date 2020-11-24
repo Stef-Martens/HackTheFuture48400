@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
   }
 
   async onRegister(email: string, password:string){
+    
     await this.firebaseService.register(email,password)
     if(this.firebaseService.Authenticated){
       this.isSignedIn = true
