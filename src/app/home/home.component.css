@@ -10,7 +10,7 @@
     left: 0;
     background-color: #EEE;
     margin: .5em;
-    padding: .3em 0;
+    padding: .1em 0;
     height: 1.6em;
     border-radius: 4px;
   }
@@ -76,7 +76,6 @@
     float: left;
     height: 100%;
     align-content: "right";
-    display: flex; 
     justify-content: flex-end;
   }
   #knop{
